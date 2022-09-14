@@ -56,10 +56,12 @@ const nextSlide = (e) => {
   setTimeout(() => e.target.classList.remove('nextSlide'), 910);
   
   setTimeout(() => {
+    // UPDATE INDEX
     let index = parseInt(e.target.dataset.index);
     index = (index < (colors.length - 1)) ? (index + 1) : 0;
     e.target.dataset.index = index;
     
+    // UPDATE SINGLE SLIDE
     let color = colors[index];
     e.target.textContent = color;
     e.target.style.setProperty('background-color', color); 
